@@ -1,8 +1,10 @@
 // import User from "../models/user.model";
 import User from "../models/user.model.js";
 import bcrypt from "bcryptjs"
+
 import { generateToken } from "../lib/Util.js";
 import cloudinary from "../lib/cloudinary.js";
+
 // in try signup the user and hash their password and create token to let them know they are authenticated
 // bcrypt js is used for hashing the password
 export const signup = async  (req,res) => {
