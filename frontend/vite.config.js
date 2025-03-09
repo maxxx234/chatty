@@ -5,6 +5,4 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
 
-   outDir:  'D:/chat-app/frontend/dist',
-   input: 'index.html'
 })
