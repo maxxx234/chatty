@@ -18,12 +18,14 @@ dotenv.config()
 // const app = express()
 
 const PORT = process.env.PORT
-const __dirname = path.resoolve();
+const __dirname = path.resolve();
 // to read enviorment variavles file
-
 app.use(express.json());
+
 app.use(cookieParser());
 // if i want to extract the json data from the body you should be using this
+
+
 app.use(
     cors({
         origin:"http://localhost:5173",
@@ -36,14 +38,14 @@ app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
  
-if(process.env.NODE_ENV==="production"){
-    app.use(express.static(path.join(__dirname, ".. frontend/dist")));
-
-    app.get("*",(req,res) => {
-        res.sendFile(path.join(__dirname, "../frontend", "dist","index.html"));
-
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static(path.join(__dirname, "../frontend/dist")));
+  
+    app.get("*", (req, res) => {
+      res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
     });
-}
+  }
+  
 
 server.listen(PORT, ()=>{ 
     console.log("server is running on port: " + PORT) 
