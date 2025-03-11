@@ -2,7 +2,7 @@
 import User from "../models/user.model.js";
 import bcrypt from "bcryptjs"
 
-import { generateToken } from "../lib/Util.js";
+import { generateToken } from "../lib/util.js";
 import cloudinary from "../lib/cloudinary.js";
 
 // in try signup the user and hash their password and create token to let them know they are authenticated
