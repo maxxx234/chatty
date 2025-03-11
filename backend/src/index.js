@@ -7,6 +7,7 @@ import bodyParser from "body-parser";
 // this is module type
 // const  expxress = require("express")
 // this is common js
+
 import path from "path";
 import authRoutes from "./routes/auth.route.js"
 import messageRoutes from "./routes/message.route.js"
@@ -38,7 +39,7 @@ app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
  
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV==="production") {
     app.use(express.static(path.join(__dirname, "../frontend/dist")));
   
     app.get("*", (req, res) => {
